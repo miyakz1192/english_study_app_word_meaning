@@ -9,7 +9,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'mysql2'
 gem 'dotenv-rails'
 gem 'kaminari'
-gem 'devise'
+#gem 'devise'
 #gem 'rails-backup-migrate'
 
 
