@@ -37,7 +37,10 @@ protected
     #thanks! http://otn.hatenablog.jp/entry/20090509/p1
     #thanks! https://morizyun.github.io/blog/ruby-nokogiri-scraping-tutorial/index.html
 
-    return if already_registerd?(sentence_no, en)
+    if already_registerd?(sentence_no, en)
+      logger.debug("delete all word regarding #{sentence_no} because already_sentence_registerd")
+      Word.where(sentence_no: sentence_no).destroy_all
+    end
 
     slptime = Random.rand(10.0)
     logger.debug("register sleep time=#{slptime}")
